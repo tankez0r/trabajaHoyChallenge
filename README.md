@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🛒 "Hoy Trabajas" - Aplicación de Gestión de Presupuesto
 
-## Getting Started
+Este proyecto es una aplicación web creada para el challenge técnico "Hoy Trabajas". La aplicación fue desarrollada utilizando Next.js para manejar tanto el frontend como el backend, cumpliendo con el requisito principal de no usar una base de datos.
 
-First, run the development server:
+✨ Descripción del Proyecto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+El objetivo de la aplicación es recibir un presupuesto y, a partir de él, determinar cuáles son los productos (o "items") más óptimos para comprar. Además de cumplir con este requisito, me extralimité al retornar el total del presupuesto solicitado y el excedente después de la compra, considerando que cada producto es único y no tiene stock.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+La arquitectura fue pensada para ser completamente autónoma, usando Next.js para gestionar la lógica del servidor (el backend) y la interfaz de usuario (el frontend) en el mismo entorno. Se eligió esta tecnología porque facilitaba el trabajo en ambos lados y porque era la opción sugerida para el challenge.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🚀 Backend y API
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+El backend cumple con los requisitos del challenge sin necesidad de una base de datos.
 
-## Learn More
+Devuelve una lista de productos: Provee un conjunto de objetos JSON que representan los productos disponibles.
 
-To learn more about Next.js, take a look at the following resources:
+Endpoints: Se han configurado dos endpoints con propósitos específicos:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+/api/items: Endpoint principal para obtener la lista de productos.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+/api/cart: Endpoint para gestionar la información del carrito, aunque en este caso se limita al cálculo del presupuesto.
 
-## Deploy on Vercel
+🛠️ Tecnologías y Librerías Utilizadas
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Next.js: Framework de React para el desarrollo full-stack. Aunque se utiliza por sus capacidades de routing y APIs, no se implementó Server-Side Rendering (SSR) ya que no fue un requisito del challenge.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+TypeScript: Para añadir robustez, mejorar la legibilidad y detectar errores de tipado en una etapa temprana del desarrollo.
+
+Zustand: Para una gestión de estado global y persistencia de datos en el frontend, manteniendo el código limpio y conciso.
+
+SWR: Librería para la obtención y gestión de datos, optimizando las llamadas al backend y mejorando la experiencia de usuario.
+
+Tailwind CSS: Un framework CSS de primera clase que agiliza la construcción de la interfaz de usuario con clases utilitarias, facilitando el diseño responsivo.
+
+React Hook Form: Para un manejo simplificado de formularios, incluyendo validación y gestión de estado.
+
+React: La librería base para la creación de componentes reutilizables y el uso eficiente del Virtual DOM para actualizaciones rápidas.
+
+⚙️ Scripts Disponibles
+
+Para ejecutar y gestionar el proyecto, puedes usar los siguientes comandos:
+
+npm run dev: Inicia el servidor de desarrollo utilizando Turbopack, lo que proporciona un entorno de desarrollo más rápido y optimizado.
+
+npm run build: Prepara la aplicación para un entorno de producción, transpilando y comprimiendo todo el código.
+
+npm run start: Ejecuta la aplicación en modo de producción, a partir del build previamente generado.
+
+npm run lint: Ejecuta pruebas y análisis de código para identificar y optimizar el código.
+
+🌐 Despliegue
+
+Esta aplicación está diseñada para ser desplegada en el ambiente gratuito de Vercel, aprovechando su integración directa con repositorios de GitHub para proyectos basados en Next.js.
+
+
+Autor: Martín Torres
+P/D: Texto enriquecido con ayuda de GEMINI AI.
